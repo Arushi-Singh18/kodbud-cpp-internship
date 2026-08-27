@@ -7,13 +7,13 @@ int main() {
 
     cout << "===== Simple Calculator =====" << endl;
 
-    cout << "Enter first number: ";
+    cout << "Enter first number."<< endl;
     cin >> num1;
 
-    cout << "Enter an operator (+, -, *, /): ";
+    cout << "Enter an operator (+, -, *, /)"<< endl;
     cin >> op;
 
-    cout << "Enter second number: ";
+    cout << "Enter second number."<< endl;
     cin >> num2;
 
     switch (op) {
