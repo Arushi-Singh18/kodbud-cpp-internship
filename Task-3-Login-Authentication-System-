@@ -1,24 +1,39 @@
-# Hardcoded credentials
-STORED_USERNAME = "kodbud_student"
-STORED_PASSWORD = "password123"
+#include <iostream>
+#include <string>
 
-max_attempts = 3
-attempts = 0
-
-print("--- Login System ---")
-
-while attempts < max_attempts:
-    # Ask user to input username and password
-    username = input("Enter username: ")
-    password = input("Enter password: ")
+int main() {
+    // Hardcoded credentials
+    const std::string STORED_USERNAME = "kodbud_student";
+    const std::string STORED_PASSWORD = "password123";
     
-    # Compare with stored credentials
-    if username == STORED_USERNAME and password == STORED_PASSWORD:
-        print("\nSuccess: Login successful! Welcome to the dashboard.")
-        break
-    else:
-        attempts += 1
-        print(f"Failure: Invalid username or password. Attempts remaining: {max_attempts - attempts}\n")
+    int max_attempts = 3;
+    int attempts = 0;
+    std::string username;
+    std::string password;
 
-if attempts == max_attempts:
-    print("Account locked: Too many failed login attempts.")
+    std::cout << "--- Login System ---\n";
+
+    while (attempts < max_attempts) {
+        // Ask user to input username and password
+        std::cout << "Enter username: ";
+        std::cin >> username;
+        std::cout << "Enter password: ";
+        std::cin >> password;
+        
+        // Compare with stored credentials
+        if (username == STORED_USERNAME && password == STORED_PASSWORD) {
+            std::cout << "\nSuccess: Login successful! Welcome to the dashboard.\n";
+            break;
+        } else {
+            attempts++;
+            std::cout << "Failure: Invalid username or password. Attempts remaining: " 
+                      << (max_attempts - attempts) << "\n\n";
+        }
+    }
+
+    if (attempts == max_attempts) {
+        std::cout << "Account locked: Too many failed login attempts.\n";
+    }
+
+    return 0;
+}
