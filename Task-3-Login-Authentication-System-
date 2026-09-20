@@ -1,0 +1,24 @@
+# Hardcoded credentials
+STORED_USERNAME = "kodbud_student"
+STORED_PASSWORD = "password123"
+
+max_attempts = 3
+attempts = 0
+
+print("--- Login System ---")
+
+while attempts < max_attempts:
+    # Ask user to input username and password
+    username = input("Enter username: ")
+    password = input("Enter password: ")
+    
+    # Compare with stored credentials
+    if username == STORED_USERNAME and password == STORED_PASSWORD:
+        print("\nSuccess: Login successful! Welcome to the dashboard.")
+        break
+    else:
+        attempts += 1
+        print(f"Failure: Invalid username or password. Attempts remaining: {max_attempts - attempts}\n")
+
+if attempts == max_attempts:
+    print("Account locked: Too many failed login attempts.")
